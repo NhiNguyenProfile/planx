@@ -1,0 +1,78 @@
+# Design System Cursor Rules
+
+## Project Context
+This is a production-grade, token-first design system built with:
+- Next.js 14 (App Router) + TypeScript
+- Tailwind CSS (token-based)
+- Storybook + Vitest
+- Atomic Design (atoms only)
+
+## Code Patterns
+
+### Components MUST:
+1. Use design tokens (never hardcoded values)
+2. Support polymorphic `as` prop
+3. Follow variant-driven API (variant, size, tone, state)
+4. Include proper ARIA attributes
+5. Use forwardRef for ref forwarding
+6. Export types alongside component
+
+### File Structure:
+```
+components/ComponentName/
+├── ComponentName.tsx          # Implementation
+├── ComponentName.types.ts     # Types
+├── ComponentName.test.tsx     # Tests
+├── ComponentName.stories.tsx  # Storybook
+└── index.ts                   # Exports
+```
+
+### Styling Rules:
+- Use `cn()` utility for className merging
+- Reference tokens via Tailwind classes: `bg-primary`, `text-neutral-900`
+- Never use arbitrary values: ❌ `bg-[#3b82f6]` ✅ `bg-primary`
+- Never hardcode spacing: ❌ `p-4` ✅ `p-md`
+
+### TypeScript Rules:
+- Strict mode enabled
+- Use PolymorphicComponentPropWithRef for polymorphic components
+- Export all public types
+- No `any` types allowed
+
+### Testing Rules:
+- Test all variants and sizes
+- Test accessibility (ARIA attributes)
+- Test polymorphic behavior
+- Test disabled/loading states
+- Minimum 80% coverage
+
+### Accessibility Rules:
+- Proper semantic HTML
+- ARIA attributes where needed
+- Keyboard navigation support
+- Focus management
+- Screen reader friendly
+
+## Import Aliases
+- `@/components/*` - Components
+- `@/tokens/*` - Design tokens
+- `@/utils/*` - Utilities
+
+## Design Tokens Available
+- Colors: primary, secondary, neutral, success, warning, error, info
+- Spacing: xs, sm, md, lg, xl, 2xl
+- Typography: xs, sm, base, lg, xl, 2xl
+- Radius: xs, sm, md, lg, xl
+- Shadows: sm, md, lg, xl
+
+## Component Checklist
+- [ ] Polymorphic support (as prop)
+- [ ] Variant/size/tone props
+- [ ] Token-based styling
+- [ ] ARIA attributes
+- [ ] forwardRef
+- [ ] TypeScript types
+- [ ] Unit tests
+- [ ] Storybook stories
+- [ ] Exported from components/index.ts
+
