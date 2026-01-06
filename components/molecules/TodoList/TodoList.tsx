@@ -40,6 +40,8 @@ export const TodoList = React.forwardRef(
       onAdd,
       onToggle,
       onExpand,
+      cardBorderRadius = 'lg',
+      cardShadow = 'sm',
       className,
       ...props
     }: TodoListProps<C>,
@@ -85,8 +87,8 @@ export const TodoList = React.forwardRef(
         <Box
           background="white"
           padding="md"
-          radius="lg"
-          shadow="sm"
+          radius={cardBorderRadius}
+          shadow={cardShadow}
           className={cn('w-full', className)}
         >
           {/* Header */}

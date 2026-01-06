@@ -37,6 +37,8 @@ export const EventCard = React.forwardRef(
       showShareButton = false,
       onShare,
       onClick,
+      cardBorderRadius = 'lg',
+      cardShadow = 'sm',
       className,
       ...props
     }: EventCardProps<C>,
@@ -48,8 +50,9 @@ export const EventCard = React.forwardRef(
       <Component ref={ref} {...props}>
         <Box
           background="white"
-          shadow="sm"
-          className={cn('w-full overflow-hidden rounded-[20px] p-[10px] gap-[10px] flex flex-col', className)}
+          radius={cardBorderRadius}
+          shadow={cardShadow}
+          className={cn('w-full overflow-hidden p-[10px] gap-[10px] flex flex-col', className)}
         >
           {/* Image Section */}
           {image && (
@@ -144,7 +147,7 @@ export const EventCard = React.forwardRef(
                         e.stopPropagation()
                         onCopyLink?.()
                       }}
-                      className="bg-[#d2f8ed] text-[#2a6554] text-[9px] px-[5px] py-[3px] rounded-[2px] hover:bg-[#c0f0e0] h-auto gap-[5px]"
+                      className="bg-[#d2f8ed] text-[#2a6554] px-[5px] py-[3px] rounded-[2px] hover:bg-[#c0f0e0] h-auto gap-[5px]"
                     >
                       <Copy size={11} />
                       {copyLinkText}

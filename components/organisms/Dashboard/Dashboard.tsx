@@ -33,6 +33,12 @@ import type { DashboardProps } from './Dashboard.types'
  * />
  * ```
  */
+// Dashboard card styling constants
+const DASHBOARD_CARD_STYLE = {
+  borderRadius: '3xl' as const,
+  shadow: 'sm' as const,
+}
+
 export const Dashboard = React.forwardRef(
   <C extends React.ElementType = 'div'>(
     {
@@ -69,20 +75,30 @@ export const Dashboard = React.forwardRef(
                   title={user.title}
                   avatar={user.avatar}
                   onNotificationClick={user.onNotificationClick}
+                  cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                  cardShadow={DASHBOARD_CARD_STYLE.shadow}
                 />
               )}
 
               {/* Todo List */}
               {todoList && (
                 <Box className="flex-shrink-0">
-                  <TodoList {...todoList} />
+                  <TodoList
+                    {...todoList}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
 
               {/* Notification Card */}
               {notification && (
                 <Box className="flex-shrink-0">
-                  <NotificationCard {...notification} />
+                  <NotificationCard
+                    {...notification}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
 
@@ -103,14 +119,22 @@ export const Dashboard = React.forwardRef(
               {/* Meeting/Event Card */}
               {meeting && (
                 <Box className="flex-shrink-0">
-                  <EventCard {...meeting} />
+                  <EventCard
+                    {...meeting}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
 
               {/* Project Overview */}
               {projectOverview && (
                 <Box className="flex-shrink-0">
-                  <ProjectOverview {...projectOverview} />
+                  <ProjectOverview
+                    {...projectOverview}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
             </div>
@@ -120,21 +144,33 @@ export const Dashboard = React.forwardRef(
               {/* AI Suggestion */}
               {aiSuggestion && (
                 <Box className="flex-shrink-0">
-                  <AISuggestion {...aiSuggestion} />
+                  <AISuggestion
+                    {...aiSuggestion}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
 
               {/* Scheduling Card */}
               {scheduling && (
                 <Box className="flex-shrink-0">
-                  <SchedulingCard {...scheduling} />
+                  <SchedulingCard
+                    {...scheduling}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
 
               {/* File Media Library */}
               {fileLibrary && (
                 <Box className="flex-shrink-0">
-                  <FileMediaLibrary {...fileLibrary} />
+                  <FileMediaLibrary
+                    {...fileLibrary}
+                    cardBorderRadius={DASHBOARD_CARD_STYLE.borderRadius}
+                    cardShadow={DASHBOARD_CARD_STYLE.shadow}
+                  />
                 </Box>
               )}
             </div>

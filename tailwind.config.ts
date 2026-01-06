@@ -57,6 +57,8 @@ const config: Config = {
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
         xl: 'var(--radius-xl)',
+        '2xl': '1rem', // 16px
+        '3xl': '1.25rem', // 20px
       },
       fontSize: {
         xs: ['var(--font-size-xs)', { lineHeight: 'var(--line-height-xs)' }],

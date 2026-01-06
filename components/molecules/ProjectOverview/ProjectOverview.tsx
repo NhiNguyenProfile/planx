@@ -23,6 +23,8 @@ export const ProjectOverview = React.forwardRef(
             steps = [],
             currentStepNote,
             metrics,
+            cardBorderRadius = 'lg',
+            cardShadow = 'sm',
             className,
             ...props
         }: ProjectOverviewProps<C>,
@@ -100,8 +102,10 @@ export const ProjectOverview = React.forwardRef(
             <Component ref={ref} {...props}>
                 <Box
                     background="transparent"
+                    radius={cardBorderRadius}
+                    shadow={cardShadow}
                     className={cn(
-                        'bg-[#15543d] rounded-[20px] p-[20px] flex flex-col gap-[10px]',
+                        'bg-[#15543d] p-[20px] flex flex-col gap-[10px]',
                         className
                     )}
                 >
@@ -181,11 +185,11 @@ export const ProjectOverview = React.forwardRef(
                     {/* Current Step Note and Metrics */}
                     <Stack direction="horizontal" spacing="lg" className="w-full mt-[16px]" align="end">
                         <Box display="block" className="flex-1 text-[#bfdacc] leading-relaxed">
-                            <Typography variant="small" className="text-[11px] text-[#bfdacc] mb-[6px]">
+                            <Typography variant="small" className=" text-[#bfdacc] mb-[6px]">
                                 Current Step:
                             </Typography>
                             {currentStepNote && (
-                                <Typography variant="small" className="text-[11px] text-[#bfdacc] whitespace-pre-wrap">
+                                <Typography variant="small" className=" text-[#bfdacc] whitespace-pre-wrap">
                                     {currentStepNote}
                                 </Typography>
                             )}

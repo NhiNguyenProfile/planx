@@ -37,6 +37,8 @@ export const FileMediaLibrary = React.forwardRef(
       onAction,
       onPrevious,
       onNext,
+      cardBorderRadius = 'lg',
+      cardShadow = 'md',
       className,
       ...props
     }: FileMediaLibraryProps<C>,
@@ -48,8 +50,8 @@ export const FileMediaLibrary = React.forwardRef(
       <Component ref={ref} {...props}>
         <Box
           background="white"
-          radius="lg"
-          shadow="md"
+          radius={cardBorderRadius}
+          shadow={cardShadow}
           className={cn('w-full p-5', className)}
         >
           {/* Header */}

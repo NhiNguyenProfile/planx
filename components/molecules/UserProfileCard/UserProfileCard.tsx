@@ -29,6 +29,8 @@ export const UserProfileCard = React.forwardRef(
       title,
       avatar,
       onNotificationClick,
+      cardBorderRadius = 'lg',
+      cardShadow = 'sm',
       className,
       ...props
     }: UserProfileCardProps<C>,
@@ -39,6 +41,9 @@ export const UserProfileCard = React.forwardRef(
     return (
       <Component ref={ref} {...props}>
         <Box
+          background="white"
+          radius={cardBorderRadius}
+          shadow={cardShadow}
           className={cn('p-4', className)}
         >
           <Stack direction="horizontal" spacing="md" align="center">

@@ -37,6 +37,8 @@ export const SchedulingCard = React.forwardRef(
       event,
       actionLabel = 'Mark this event',
       onAction,
+      cardBorderRadius = 'lg',
+      cardShadow = 'md',
       className,
       ...props
     }: SchedulingCardProps<C>,
@@ -48,13 +50,13 @@ export const SchedulingCard = React.forwardRef(
       <Component ref={ref} {...props}>
         <Box
           background="white"
-          radius="lg"
-          shadow="md"
+          radius={cardBorderRadius}
+          shadow={cardShadow}
           className={cn('w-full overflow-hidden', className)}
         >
           {/* Header Section */}
           <Box display="block" className="p-5">
-            <Stack direction="horizontal" justify="between" align="start" className="mb-3">
+            <Stack direction="horizontal" justify="between" align="end" className="mb-3">
               <Stack direction="vertical" spacing="xs" className="flex-1">
                 <Typography variant="h6" weight="semibold" className="text-neutral-900">
                   {title}
@@ -66,14 +68,14 @@ export const SchedulingCard = React.forwardRef(
                 )}
               </Stack>
               {(day || date) && (
-                <Stack direction="vertical" spacing="none" align="end">
+                <Stack direction="vertical" spacing="none" align="start" justify="end" className="h-full">
                   {day && (
                     <Typography variant="small" className="text-neutral-500 text-xs uppercase">
                       {day}
                     </Typography>
                   )}
                   {date && (
-                    <Typography variant="h6" weight="semibold" className="text-neutral-900">
+                    <Typography variant="h3" weight="bold" className="text-neutral-900">
                       {date}
                     </Typography>
                   )}

@@ -1,6 +1,6 @@
 import { PolymorphicComponentPropWithRef } from '@/utils'
 
-export interface NotificationCardProps<C extends React.ElementType = 'div'> =
+export type NotificationCardProps<C extends React.ElementType = 'div'> =
   PolymorphicComponentPropWithRef<
     C,
     {
@@ -38,6 +38,14 @@ export interface NotificationCardProps<C extends React.ElementType = 'div'> =
        * Callback when notification is clicked
        */
       onClick?: () => void
+      /**
+       * Border radius for the card container
+       */
+      cardBorderRadius?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full'
+      /**
+       * Shadow for the card container
+       */
+      cardShadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
     }
   >
 

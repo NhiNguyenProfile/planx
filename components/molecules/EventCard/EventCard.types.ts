@@ -1,6 +1,6 @@
 import { PolymorphicComponentPropWithRef } from '@/utils'
 
-export interface EventCardProps<C extends React.ElementType = 'div'> =
+export type EventCardProps<C extends React.ElementType = 'div'> =
   PolymorphicComponentPropWithRef<
     C,
     {
@@ -51,6 +51,14 @@ export interface EventCardProps<C extends React.ElementType = 'div'> =
        * Callback when card is clicked
        */
       onClick?: () => void
+      /**
+       * Border radius for the card container
+       */
+      cardBorderRadius?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full'
+      /**
+       * Shadow for the card container
+       */
+      cardShadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl'
     }
   >
 

@@ -37,6 +37,8 @@ export const NotificationCard = React.forwardRef(
       read = false,
       onSend,
       onClick,
+      cardBorderRadius = 'lg',
+      cardShadow = 'sm',
       className,
       ...props
     }: NotificationCardProps<C>,
@@ -48,8 +50,8 @@ export const NotificationCard = React.forwardRef(
       <Component ref={ref} {...props}>
         <Box
           background="white"
-          radius="lg"
-          shadow="sm"
+          radius={cardBorderRadius}
+          shadow={cardShadow}
           className={cn('w-full px-5 py-[25px]', className)}
         >
           {/* Header */}

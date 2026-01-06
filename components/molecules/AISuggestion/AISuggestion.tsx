@@ -29,6 +29,8 @@ export const AISuggestion = React.forwardRef(
       onYes,
       onNo,
       showIcon = true,
+      cardBorderRadius = 'lg',
+      cardShadow = 'lg',
       className,
       ...props
     }: AISuggestionProps<C>,
@@ -40,10 +42,10 @@ export const AISuggestion = React.forwardRef(
       <Component ref={ref} {...props}>
         <Box
           background="transparent"
-          radius="lg"
-          shadow="lg"
+          radius={cardBorderRadius}
+          shadow={cardShadow}
           className={cn(
-            'bg-[#312C22] rounded-[12px] p-4 flex flex-col gap-3',
+            'bg-[#312C22] p-4 flex flex-col gap-3',
             className
           )}
         >
