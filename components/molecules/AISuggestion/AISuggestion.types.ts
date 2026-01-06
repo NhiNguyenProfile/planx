@@ -1,0 +1,41 @@
+import { PolymorphicComponentPropWithRef } from '@/utils'
+
+export interface AISuggestionProps<C extends React.ElementType = 'div'> =
+  PolymorphicComponentPropWithRef<
+    C,
+    {
+      /**
+       * Title/heading of the suggestion
+       * @default 'AI suggestions'
+       */
+      title?: string
+      /**
+       * Question or suggestion text
+       */
+      question: string
+      /**
+       * Label for the "Yes" option
+       * @default 'Yes'
+       */
+      yesLabel?: string
+      /**
+       * Label for the "No" option
+       * @default 'No'
+       */
+      noLabel?: string
+      /**
+       * Callback when "Yes" is clicked
+       */
+      onYes?: () => void
+      /**
+       * Callback when "No" is clicked
+       */
+      onNo?: () => void
+      /**
+       * Show icon next to title
+       * @default true
+       */
+      showIcon?: boolean
+    }
+  >
+
